@@ -1,0 +1,17 @@
+Amqp.NetCore, Version=1.2.0.0, Culture=neutral, PublicKeyToken=905a7b1e6458e0c3
+  Amqp.SRAmqp.resources
+Amqp.Store, Version=1.1.2.0, Culture=neutral, PublicKeyToken=null
+  Amqp.SRAmqp.resources
+Microsoft.Azure.EventHubs, Version=1.0.1.0, Culture=neutral, PublicKeyToken=7e34167dcc6d6d8c
+  Microsoft.Azure.EventHubs.Resources.resources
+Microsoft.Extensions.DependencyInjection.Abstractions, Version=1.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60
+  Microsoft.Extensions.DependencyInjection.Abstractions.Resources.resources
+Microsoft.Extensions.Logging.Abstractions, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60
+  Microsoft.Extensions.Logging.Abstractions.Resource.resources
+Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+  Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.Properties.Resources.resources
+System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+  System.Net.Http.Properties.CommonWebApiResources.resources
+  System.Net.Http.Properties.Resources.resources
+Validation, Version=2.2.0.0, Culture=neutral, PublicKeyToken=2fc06f0d701809a7
+  Validation.Strings.resources

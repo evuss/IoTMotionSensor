@@ -1,0 +1,8 @@
+/In:"C:\Users\tone.pedersen\Documents\Acando_IoT_FreeSpots\Acando_IoT_FreeSpots\FreeSpotSensorPi3\FreeSpotSensorPi3\obj\ARM\Release\ilc\in"
+/Lib:"C:\Users\tone.pedersen\Documents\Acando_IoT_FreeSpots\Acando_IoT_FreeSpots\FreeSpotSensorPi3\FreeSpotSensorPi3\obj\ARM\Release\ilc\in"
+/Lib:"C:\Users\tone.pedersen\.nuget\packages\microsoft.net.native.compiler\1.6.1\tools\ARM\ilc\lib\Private"
+/Lib:"C:\Program Files (x86)\Windows Kits\10\References\Windows.Devices.DevicesLowLevelContract\2.0.0.0"
+/Lib:"C:\Program Files (x86)\Windows Kits\10\References\Windows.System.SystemManagementContract\2.0.0.0"
+/WinMD:"C:\Users\tone.pedersen\Documents\Acando_IoT_FreeSpots\Acando_IoT_FreeSpots\FreeSpotSensorPi3\FreeSpotSensorPi3\obj\ARM\Release\ilc\in\WinMetadata\Windows.winmd"
+/RdXmlPath:"C:\Users\tone.pedersen\.nuget\packages\microsoft.net.native.compiler\1.6.1\tools\LibraryXML"
+/RunOnlyPreDR

@@ -1,0 +1,11 @@
+/out:"C:\Users\tone.pedersen\Documents\Acando_IoT_FreeSpots\Acando_IoT_FreeSpots\FreeSpotSensorPi3\FreeSpotSensorPi3\obj\ARM\Release\ilc\intermediate\SgGenerated\\"
+/int:"C:\Users\tone.pedersen\Documents\Acando_IoT_FreeSpots\Acando_IoT_FreeSpots\FreeSpotSensorPi3\FreeSpotSensorPi3\obj\ARM\Release\ilc\intermediate\\"
+/ref:"C:\Users\tone.pedersen\Documents\Acando_IoT_FreeSpots\Acando_IoT_FreeSpots\FreeSpotSensorPi3\FreeSpotSensorPi3\obj\ARM\Release\ilc\intermediate\PreMergeILTransformed"
+/ref:"C:\Users\tone.pedersen\Documents\Acando_IoT_FreeSpots\Acando_IoT_FreeSpots\FreeSpotSensorPi3\FreeSpotSensorPi3\obj\ARM\Release\ilc\intermediate\TransformedSRWR"
+/ref:"C:\Users\tone.pedersen\Documents\Acando_IoT_FreeSpots\Acando_IoT_FreeSpots\FreeSpotSensorPi3\FreeSpotSensorPi3\obj\ARM\Release\ilc\in"
+/ref:"C:\Users\tone.pedersen\Documents\Acando_IoT_FreeSpots\Acando_IoT_FreeSpots\FreeSpotSensorPi3\FreeSpotSensorPi3\obj\ARM\Release\ilc\in\\"
+/ref:"C:\Users\tone.pedersen\Documents\Acando_IoT_FreeSpots\Acando_IoT_FreeSpots\FreeSpotSensorPi3\FreeSpotSensorPi3\obj\ARM\Release\ilc\in\\"
+/ref:"C:\Users\tone.pedersen\.nuget\packages\microsoft.net.native.compiler\1.6.1\tools\ARM\ilc\lib\Private\\"
+/ref:"C:\Users\tone.pedersen\Documents\Acando_IoT_FreeSpots\Acando_IoT_FreeSpots\FreeSpotSensorPi3\FreeSpotSensorPi3\obj\ARM\Release\ilc\in\WinMetadata"
+/ca:System.Private.CoreLib
+/cscpath:"C:\Users\tone.pedersen\.nuget\packages\microsoft.net.native.compiler\1.6.1\tools\ARM\ilc\csc"

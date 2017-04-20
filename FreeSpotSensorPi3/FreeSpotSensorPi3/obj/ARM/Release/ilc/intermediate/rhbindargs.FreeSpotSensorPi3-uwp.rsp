@@ -1,0 +1,16 @@
+/osver:6.2
+/appcontainer
+/runtime:mrt100_app
+/eh:clr
+/pdb
+"/nativeLink:C:\Users\tone.pedersen\.nuget\packages\microsoft.net.native.compiler\1.6.1\tools\ARM\ilc\lib\Native\vmath.lib"
+/customImports
+/methodBodyFolding
+"C:\Users\tone.pedersen\Documents\Acando_IoT_FreeSpots\Acando_IoT_FreeSpots\FreeSpotSensorPi3\FreeSpotSensorPi3\obj\ARM\Release\ilc\intermediate\MDIL\FreeSpotSensorPi3-uwp.mdilexe"
+"/i:C:\Users\tone.pedersen\Documents\Acando_IoT_FreeSpots\Acando_IoT_FreeSpots\FreeSpotSensorPi3\FreeSpotSensorPi3\obj\ARM\Release\ilc\intermediate\MDIL"
+"/out:C:\Users\tone.pedersen\Documents\Acando_IoT_FreeSpots\Acando_IoT_FreeSpots\FreeSpotSensorPi3\FreeSpotSensorPi3\obj\ARM\Release\ilc\intermediate\Native\FreeSpotSensorPi3-uwp.exe"
+"/pdbAltPath:C:\Users\tone.pedersen\Documents\Acando_IoT_FreeSpots\Acando_IoT_FreeSpots\FreeSpotSensorPi3\FreeSpotSensorPi3\bin\ARM\Release\ilc"
+"/res:C:\Users\tone.pedersen\Documents\Acando_IoT_FreeSpots\Acando_IoT_FreeSpots\FreeSpotSensorPi3\FreeSpotSensorPi3\obj\ARM\Release\ilc\intermediate\Native.res"
+"/i:C:\Users\tone.pedersen\.nuget\packages\microsoft.net.native.sharedlibrary-arm\1.6.0\tools\SharedLibrary\ret\MDIL"
+/shimexe
+"/classlib:SharedLibrary"
