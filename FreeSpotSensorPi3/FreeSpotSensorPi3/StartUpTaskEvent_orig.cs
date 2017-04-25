@@ -37,10 +37,10 @@ namespace FreeSpotSensorPi3
         private BackgroundTaskDeferral _backgroundTaskDeferral;
 
         // IoT hub access added by Tone
-        static DeviceClient deviceClient;
-        static string iotHubUri = "ObokningsbaraRum.azure-devices.net";
-        static string deviceName = "IoTTest";
-        static string deviceKey = "W97Sx7FT1ZsgT7+a2EpONkenFVMc+Sxx7PlI412v0hg=";
+        //static DeviceClient deviceClient;
+        //static string iotHubUri = "ObokningsbaraRum.azure-devices.net";
+        //static string deviceName = "IoTTest";
+        //static string deviceKey = "W97Sx7FT1ZsgT7+a2EpONkenFVMc+Sxx7PlI412v0hg=";
 
         // Event hub access
         // mk@acando.com, sender connection information:
@@ -50,7 +50,7 @@ namespace FreeSpotSensorPi3
         //      Endpoint=sb://freespots4rswer44a-ns.servicebus.windows.net/;SharedAccessKeyName=freespots_send;SharedAccessKey=62hQHXNN8P4nq3trUdQmQ3NeVZLq18gESpsjuQE2Quo=
         //      Queue path: freespots4rswer44a
 
-        //*TONE*private readonly EventHubClient _eventHub = EventHubClient.CreateFromConnectionString("Endpoint=sb://obokbararumsuite.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=npa+nAtVO4aqxtgnFe52XsY+/xss/iHwLZCd9yneOsg=", "obokbararumevent");
+        private readonly EventHubClient _eventHub = EventHubClient.CreateFromConnectionString("Endpoint=sb://obokbararumsuite.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=npa+nAtVO4aqxtgnFe52XsY+/xss/iHwLZCd9yneOsg=", "obokbararumevent");
         //*TONE*private readonly EventHubClient _eventHub = EventHubClient.CreateFromConnectionString("Endpoint=sb://freespots4rswer44a-ns.servicebus.windows.net/;SharedAccessKeyName=freespots_send;SharedAccessKey=62hQHXNN8P4nq3trUdQmQ3NeVZLq18gESpsjuQE2Quo=", "freespots4rswer44a");
         //private readonly EventHubClient _eventHub = EventHubClient.CreateFromConnectionString("Endpoint=sb://ehntesthubns.servicebus.windows.net/;SharedAccessKeyName=ehnTestHubns_send;SharedAccessKey=u0UlsbZGMcPNEemxDrD94B+72iD3keCa2s6xHbknOxk=", "ehntesthub");
 
@@ -82,7 +82,7 @@ namespace FreeSpotSensorPi3
             // Do not close application after startup
             _backgroundTaskDeferral = taskInstance.GetDeferral();
 
-            deviceClient = DeviceClient.Create(iotHubUri, new DeviceAuthenticationWithRegistrySymmetricKey(deviceName, deviceKey));//commented due to: CS0104  C# is an ambiguous reference, TransportType.Http1
+            //*TONE IOTHUB* deviceClient = DeviceClient.Create(iotHubUri, new DeviceAuthenticationWithRegistrySymmetricKey(deviceName, deviceKey));//commented due to: CS0104  C# is an ambiguous reference, TransportType.Http1
 
             // Execute first run
             GetSensorReadings();
@@ -97,7 +97,7 @@ namespace FreeSpotSensorPi3
         private void GetSensorReadings()
         {
             string pirCurrentState = "U";
-            //EventData eventMessage;
+            EventData eventMessage;
             //Message message;
             MsgBody tmpMsg = new MsgBody(msg);
 
@@ -151,11 +151,11 @@ namespace FreeSpotSensorPi3
                         tmpMsg.Change = "T"; // This is a change of status (T)rue
 
                         // Create brokered message
-                        //eventMessage = new EventData(Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(tmpMsg)));
+                        eventMessage = new EventData(Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(tmpMsg)));
                         //*checking message in consoleTONE* Console.WriteLine("{0} > Sending message: {1}", DateTime.Now, JsonConvert.SerializeObject(tmpMsg));
                         // Send to event hub
-                        //_eventHub.Send(eventMessage);
-                        SendDeviceToCloudMessagesAsync(tmpMsg);
+                        _eventHub.Send(eventMessage);
+                        //SendDeviceToCloudMessagesAsync(tmpMsg);
 
                         // Save any changes (to this last so that any exception does not save changes.)
                         msg.setMsgBody(tmpMsg);
@@ -169,9 +169,9 @@ namespace FreeSpotSensorPi3
                         tmpMsg.Change = "F";   // Status change (F)alse. (Set if we will send (is alive)
 
                         // Create brokered message
-                        // eventMessage = new EventData(Encoding.ASCII.GetBytes(JsonConvert.SerializeObject(tmpMsg)));
+                        eventMessage = new EventData(Encoding.ASCII.GetBytes(JsonConvert.SerializeObject(tmpMsg)));
 
-                        SendDeviceToCloudMessagesAsync(tmpMsg);
+                        //*IotHubTONE* SendDeviceToCloudMessagesAsync(tmpMsg);
                         // Send to IoT hub
                         //private static async void SendDeviceToCloudMessagesAsync(Message m)
                         //{
@@ -181,7 +181,7 @@ namespace FreeSpotSensorPi3
 
                         //}
 
-                        // _eventHub.Send(eventMessage);
+                        _eventHub.Send(eventMessage);
 
                         // Save any changes (to this last so that any exception does not save changes.)
                         msg.setMsgBody(tmpMsg);
@@ -248,14 +248,14 @@ namespace FreeSpotSensorPi3
 
             // TODO: ?Log / Update screen about initialization
         }
-        private static async void SendDeviceToCloudMessagesAsync(MsgBody tmpMsg)
-        {
-            var message = new Message(Encoding.ASCII.GetBytes(JsonConvert.SerializeObject(tmpMsg)));
-            await deviceClient.SendEventAsync(message);
+        /* private static async void SendDeviceToCloudMessagesAsync(MsgBody tmpMsg)
+         {
+             var message = new Message(Encoding.ASCII.GetBytes(JsonConvert.SerializeObject(tmpMsg)));
+             await deviceClient.SendEventAsync(message);
 
-            Console.WriteLine("{0} > Sending message: {1}", DateTime.Now, JsonConvert.SerializeObject(tmpMsg));
+             Console.WriteLine("{0} > Sending message: {1}", DateTime.Now, JsonConvert.SerializeObject(tmpMsg));
 
-        }
+         }*/
         public static string GetCurrentIpv4Address()
         {
             var icp = NetworkInformation.GetInternetConnectionProfile();
@@ -329,4 +329,5 @@ namespace FreeSpotSensorPi3
 
     }
 }
+
 
